@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var connect = require('gulp-connect');
+var browserSync = require('browser-sync').create();
 
 var PathTo = {
   SassFiles: './sass/**/*.scss',
@@ -32,6 +33,11 @@ gulp.task('public-server', function (){
     port: 8282,
     livereload: true
   });
+  browserSync.init({
+    server: "./public",
+    livereload: true
+  });
+    gulp.watch("public/*.html").on('change', browserSync.reload);
 });
 
 gulp.task('default', ['compile-sass', 'watch-files', 'public-server']);
