@@ -1,5 +1,40 @@
+//partials
+@import 'partials/_clearfix';
+@import 'partials/_reset';
+@import 'partials/_general_styles.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #content{
+  height: 100vh;
+}
+
 body {
-  h1 {
-    background-color: #fff;
+  #Title{
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 0 0 100%;
+    font-size: 50px;
+    padding: 10px;
+  }
+
+  .TopicDiv{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: auto;
+  }
+
+  .TopicDiv
+  > div{
+    flex: 1 1 100%;
+    border: 1px solid black;
+    text-align: center;
+    padding: 15px;
+  }
+
+  #content{
+    background-image: url('../assets/bg.jpg');
   }
 }

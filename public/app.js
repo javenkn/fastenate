@@ -1,36 +1,63 @@
 var $titleElement = $('<div>');
 $($titleElement).attr('id','Title');
+$($titleElement).text('Fastenate');
 $('body').append($titleElement);
 
 var $topicElement = $('<div>');
 $($topicElement).addClass('TopicDiv');
 $('body').append($topicElement);
 
-var $getTheApp = $('<div>');
-$($getTheApp).attr('id','get_the_app');
-var $myBoards = $('<div>');
-$($myBoards).attr('id','my_boards');
 var $random = $('<div>');
 $($random).attr('id','random');
-$('.TopicDiv').append($getTheApp);
-$('.TopicDiv').append($myBoards);
+$($random).text('Random');
+var $myBoards = $('<div>');
+$($myBoards).attr('id','my_boards');
+$($myBoards).text('My Boards');
+var $getTheApp = $('<div>');
+$($getTheApp).attr('id','get_the_app');
+$($getTheApp).text('Get The App');
 $('.TopicDiv').append($random);
+$('.TopicDiv').append($myBoards);
+$('.TopicDiv').append($getTheApp);
 $($getTheApp).on('click', getData);
 $($myBoards).on('click', getData);
 $($random).on('click', getData);
 
+var $contentElement = $('<div>');
+$($contentElement).attr('id', 'content');
+$('body').append($contentElement);
+
 function getData(event){
   $.ajax({
     method: 'GET',
-    url: '/public/api/' + $(this).attr('id') + '.json',
+    url: '/api/' + $(this).attr('id') + '.json',
     dataType: 'json',
   })
   .done(function(result) {
+    console.log(result);
     displayPage(result);
   });
-
 }
 
 function displayPage(response){
+  var responseArr = response.data.children;
+  console.log(responseArr);
+
+  responseArr.forEach(function(element, index, arr){
+    var $articleElement = $('<div>');
+    $($articleElement).addClass('articles');
+    $('#content').append($articleElement);
+
+    var $articleTitle = $('<div>');
+    $($articleTitle).addClass('titles');
+    $($articleTitle).text(arr[index].data.title);
+    $($articleElement).append($articleTitle);
+
+    var $articleAuthor = $('<div>');
+    $($articleAuthor).addClass('authors');
+    $($articleAuthor).text(arr[index].data.author);
+    $($articleElement).append($articleAuthor);
+  });
+
 
 }
