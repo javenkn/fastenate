@@ -67,27 +67,29 @@ table {
 * {
   box-sizing: border-box; }
 
-html, body, #content {
-  height: 100vh; }
-
-body #Title {
-  display: flex;
-  flex-flow: row nowrap;
-  flex: 0 0 100%;
-  font-size: 50px;
-  padding: 10px; }
-
-body .TopicDiv {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: auto; }
-
-body .TopicDiv
+body {
+  background: url("../assets/bg.jpg"); }
+  body #Title {
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 0 0 100%;
+    height: 70px;
+    background-image: url("../assets/logo.svg");
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: left center; }
+  body .TopicDiv {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: auto; }
+  body .TopicDiv
 > div {
-  flex: 1 1 100%;
-  border: 1px solid black;
-  text-align: center;
-  padding: 15px; }
-
-body #content {
-  background-image: url("../assets/bg.jpg"); }
+    flex: 1 1 100%;
+    border: 1px solid black;
+    text-align: center;
+    padding: 15px;
+    background-color: #3f3f3f;
+    font-family: 'Oswald', sans-serif;
+    color: #7e7e7e; }
+  body #content {
+    height: 100%; }

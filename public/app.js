@@ -1,6 +1,5 @@
 var $titleElement = $('<div>');
 $($titleElement).attr('id','Title');
-$($titleElement).text('Fastenate');
 $('body').append($titleElement);
 
 var $topicElement = $('<div>');
@@ -9,13 +8,13 @@ $('body').append($topicElement);
 
 var $random = $('<div>');
 $($random).attr('id','random');
-$($random).text('Random');
+$($random).text('RANDOM');
 var $myBoards = $('<div>');
 $($myBoards).attr('id','my_boards');
-$($myBoards).text('My Boards');
+$($myBoards).text('MY BOARDS');
 var $getTheApp = $('<div>');
 $($getTheApp).attr('id','get_the_app');
-$($getTheApp).text('Get The App');
+$($getTheApp).text('GET THE APP');
 $('.TopicDiv').append($random);
 $('.TopicDiv').append($myBoards);
 $('.TopicDiv').append($getTheApp);
@@ -47,6 +46,12 @@ function displayPage(response){
     var $articleElement = $('<div>');
     $($articleElement).addClass('articles');
     $('#content').append($articleElement);
+
+    var $imageElement = $('<div>');
+    $($imageElement).addClass('images');
+    var imageThumbnail = arr[index].data.thumbnail;
+    $($imageElement).css('backgroundImage', 'url(' + imageThumbnail + ')');
+    $($articleElement).append($imageElement);
 
     var $articleTitle = $('<div>');
     $($articleTitle).addClass('titles');
