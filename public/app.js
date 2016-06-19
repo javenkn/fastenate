@@ -2,6 +2,11 @@ var $titleElement = $('<div>');
 $($titleElement).attr('id','Title');
 $('body').append($titleElement);
 
+var $addButton = $('<div>');
+$($addButton).attr('id', 'addButton');
+$($addButton).text('+');
+$($titleElement).append($addButton);
+
 var $topicElement = $('<div>');
 $($topicElement).addClass('TopicDiv');
 $('body').append($topicElement);
@@ -60,8 +65,14 @@ function displayPage(response){
 
     var $articleAuthor = $('<div>');
     $($articleAuthor).addClass('authors');
-    $($articleAuthor).text(arr[index].data.author);
+    $($articleAuthor).text('by ' + arr[index].data.author);
     $($articleElement).append($articleAuthor);
+
+    var $articleDescription =  $('<div>');
+    $($articleDescription).addClass('description');
+    $($articleTitle).text(arr[index].data.title);
+    $($articleElement).append($articleDescription);
+
   });
 
 

@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+#content{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.articles {
+  background-color: white;
+  height: 555px;
+  text-align: center;
+  flex: 1 1 70%;
+  margin: 10px;
+
+  .images {
+    height: 65%;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 24px;
+  }
+
+  .titles {
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    text-align: left;
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-bottom: 10px;
+  }
+
+  .authors {
+    font-family: 'Lato', sans-serif;
+    color: #7e7e7e;
+    text-align: left;
+    margin-left: 24px;
+  }
+}

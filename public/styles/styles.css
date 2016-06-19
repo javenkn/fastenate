@@ -67,6 +67,38 @@ table {
 * {
   box-sizing: border-box; }
 
+#content {
+  display: flex;
+  flex-flow: row wrap; }
+
+.articles {
+  background-color: white;
+  height: 555px;
+  text-align: center;
+  flex: 1 1 70%;
+  margin: 10px; }
+  .articles .images {
+    height: 65%;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 24px; }
+  .articles .titles {
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    text-align: left;
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-bottom: 10px; }
+  .articles .authors {
+    font-family: 'Lato', sans-serif;
+    color: #7e7e7e;
+    text-align: left;
+    margin-left: 24px; }
+
+* {
+  box-sizing: border-box; }
+
 body {
   background: url("../assets/bg.jpg"); }
   body #Title {
@@ -78,6 +110,17 @@ body {
     background-color: white;
     background-repeat: no-repeat;
     background-position: left center; }
+  body #addButton {
+    height: 30px;
+    width: 30px;
+    border: 1px solid orange;
+    text-align: center;
+    font-size: 23px;
+    margin-left: auto;
+    margin-right: 50px;
+    align-self: center;
+    color: red;
+    padding: 2px; }
   body .TopicDiv {
     display: flex;
     flex-flow: row nowrap;
@@ -85,11 +128,12 @@ body {
   body .TopicDiv
 > div {
     flex: 1 1 100%;
-    border: 1px solid black;
     text-align: center;
     padding: 15px;
     background-color: #3f3f3f;
     font-family: 'Oswald', sans-serif;
-    color: #7e7e7e; }
-  body #content {
-    height: 100%; }
+    color: #7e7e7e;
+    border-right: 1px solid;
+    border-right-color: #7e7e7e; }
+  body div:nth-child(3) {
+    border-right-color: black; }
